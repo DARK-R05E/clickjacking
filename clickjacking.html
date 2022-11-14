@@ -1,0 +1,31 @@
+<html>
+      <head>
+      </head>
+      <body>
+          <h1>The page below has been rendered in an iFrame.</h1>
+
+          <iframe id="gotcha" onload="loaded()" src="<your page ip>" title="Clickjacking" width="1000" height="1000" style=“border:1px solid black;“></iframe>
+      <h2>Popup</h2>
+
+      <div class="popup" onclick="myFunction()">Click me to toggle the popup!
+
+        <span class="popuptext" id="myPopup">A Simple Popup!</span>
+      </div>
+      <button name="LOGIN" onClick="redirect('"<your page ip>')">
+      <script type="text/javascript">
+          var val = 1;
+          function loaded() {
+              if (val === 1) {
+              document.getElementById('gotcha').src = "";
+              val = 2;
+          }
+      }
+      </script>
+      <script>
+          function showAlert() {
+              alert ("https://pentestpeople.com");
+          }
+          showAlert();
+      </script>
+      </body>
+</html>
